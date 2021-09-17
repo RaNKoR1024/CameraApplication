@@ -32,7 +32,8 @@ class CameraListFragment :
             })
         }
         with(binding) {
-            val columns = resources.displayMetrics.widthPixels / 300
+            val density = resources.displayMetrics.density
+            val columns = (resources.displayMetrics.widthPixels / (300 * density)).toInt()
             val gridColumns = if (columns == 0) 1 else columns
             rvCameras.adapter = adapter
             rvCameras.layoutManager = GridLayoutManager(requireContext(), gridColumns)

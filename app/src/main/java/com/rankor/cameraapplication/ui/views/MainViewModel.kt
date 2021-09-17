@@ -122,7 +122,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             )
         )
         val query = intent.query
-        val searchCameraList = cameraList.filter { it.title.contains(query) }
+        val searchCameraList = cameraList.filter { it.title.contains(query, true) }
         if (query != intent.query) {
             return
         }

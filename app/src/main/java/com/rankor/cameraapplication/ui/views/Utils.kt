@@ -8,16 +8,16 @@ fun ViewLoadBinding.setLoadingState(loadingState: LoadState) {
     with(this) {
         when (loadingState) {
             LoadState.LOADING -> {
-                root.visibility = View.VISIBLE
                 pbPreloader.visibility = View.VISIBLE
                 btnRetry.visibility = View.GONE
                 tvErrorName.visibility = View.GONE
+                root.visibility = View.VISIBLE
             }
             LoadState.ERROR -> {
-                root.visibility = View.VISIBLE
                 pbPreloader.visibility = View.GONE
                 btnRetry.visibility = View.VISIBLE
                 tvErrorName.visibility = View.VISIBLE
+                root.visibility = View.VISIBLE
             }
             LoadState.SUCCESS, LoadState.SUCCESS_SEARCH -> {
                 root.visibility = View.GONE
